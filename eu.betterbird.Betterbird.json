@@ -273,6 +273,11 @@
                 {
                     "type": "file",
                     "path": "apply-patches.sh"
+                },
+                {
+                    "type": "archive",
+                    "path": "icons/default.zip",
+                    "dest": "icons"
                 }
             ]
         }
