@@ -212,7 +212,7 @@
                 "prepend-ld-library-path": "/usr/lib/sdk/llvm13/lib",
                 "env":{
                     "TERM": "linux",
-                    "CARGO_HOME": "/run/build/Thunderbird/cargo",
+                    "CARGO_HOME": "/run/build/betterbird/cargo",
                     "npm_config_nodedir": "/usr/lib/sdk/node14"
                 }
             },
