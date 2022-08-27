@@ -234,10 +234,6 @@
                 "thunderbird-sources.json",
                 {
                     "type": "file",
-                    "path": "mozconfig"
-                },
-                {
-                    "type": "file",
                     "path": "eu.betterbird.Betterbird.desktop"
                 },
                 {
