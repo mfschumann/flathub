@@ -44,7 +44,7 @@ echo
 echo "======================================================="
 echo "Applying patch series for comm repository"
 cd comm
-cat thunderbird-patches/$VERSION/series | while read line || [[ -n $line ]]
+cat ../thunderbird-patches/$VERSION/series | while read line || [[ -n $line ]]
     do
         [[ -f ../patches/$line ]] && echo Applying patch $line ... && patch -p1 -i ../patches/$line
     done
