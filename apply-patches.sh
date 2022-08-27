@@ -32,7 +32,6 @@ find thunderbird-patches -type f -name *.patch -exec cp '{}' patches ';'
 echo
 echo "======================================================="
 echo "Applying patch series for main repository"
-echo 
 echo "... without patches for Windows installer"
 sed -i 's/08-branding-m-c.patch/# 08-branding-m-c.patch/g' thunderbird-patches/$VERSION/series-M-C
 sed -i 's/08a-branding-m-c.patch/# 08a-branding-m-c.patch/g' thunderbird-patches/$VERSION/series-M-C
