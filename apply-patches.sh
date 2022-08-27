@@ -27,7 +27,7 @@ echo "======================================================="
 echo "Copying patches"
 cp thunderbird-patches/$VERSION/mozconfig-Linux mozconfig
 rm -rf patches; mkdir patches
-find thunderbird-patches -type f -name *.patch -exec cp '{}' patches ';'
+find thunderbird-patches/$VERSION -type f -name *.patch -exec cp '{}' patches ';'
 
 echo
 echo "======================================================="
