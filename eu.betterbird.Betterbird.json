@@ -227,20 +227,12 @@
                 "install -Dm644 default-preferences.js /app/lib/betterbird/defaults/pref/default-preferences.js",
                 "mkdir -p /app/lib/betterbird/distribution/extensions",
                 "for lang in langpacks/*.xpi;do export locale=$(basename -s .xpi $lang); install -Dm644 -t /app/share/runtime/locale/${locale:9:2}/ $lang; ln -sf /app/share/runtime/locale/${locale:9:2}/$(basename $lang) /app/lib/betterbird/distribution/extensions/$(basename $lang); done",
-                "for i in 16 22 24 32 48 64 128 256;do install -Dm644 icons/default${i}.png /app/share/icons/hicolor/${i}x${i}/apps/betterbird.png;done",
-                "install -Dm644 eu.betterbird.Betterbird.desktop /app/share/applications/eu.betterbird.Betterbird.desktop",
-                "install -Dm644 eu.betterbird.Betterbird.appdata.xml /app/share/metainfo/eu.betterbird.Betterbird.appdata.xml"
+                "for i in 16 22 24 32 48 64 128 256;do install -Dm644 thunderbird-patches/metadata/icons/betterbird${i}.png /app/share/icons/hicolor/${i}x${i}/apps/betterbird.png;done",
+                "install -Dm644 thunderbird-patches/metadata/eu.betterbird.Betterbird.desktop /app/share/applications/eu.betterbird.Betterbird.desktop",
+                "install -Dm644 thunderbird-patches/metadata/eu.betterbird.Betterbird.appdata.xml /app/share/metainfo/eu.betterbird.Betterbird.appdata.xml"
             ],
             "sources": [
                 "thunderbird-sources.json",
-                {
-                    "type": "file",
-                    "path": "eu.betterbird.Betterbird.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "eu.betterbird.Betterbird.appdata.xml"
-                },
                 {
                     "type": "file",
                     "path": "policies.json"
@@ -270,11 +262,6 @@
                 {
                     "type": "file",
                     "path": "apply-patches.sh"
-                },
-                {
-                    "type": "archive",
-                    "path": "icons/default.zip",
-                    "dest": "icons"
                 }
             ]
         }
