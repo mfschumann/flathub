@@ -17,7 +17,12 @@ sed -i 's/08-branding-m-c.patch/# 08-branding-m-c.patch/g' thunderbird-patches/$
 sed -i 's/08a-branding-m-c.patch/# 08a-branding-m-c.patch/g' thunderbird-patches/$VERSION/series-M-C
 cat thunderbird-patches/$VERSION/series-M-C | while read line || [[ -n $line ]]
     do 
-        [[ -f patches/$line ]] && echo Applying patch $line ... && patch -p1 -i patches/$line
+        if [[ -f patches/$line ]]
+        then
+            echo Applying patch $line ... 
+            git apply --stat --apply patches/$line
+            echo " -> $?"
+        fi
     done
 
 echo
@@ -26,6 +31,11 @@ echo "Applying patch series for comm repository"
 cd comm
 cat ../thunderbird-patches/$VERSION/series | while read line || [[ -n $line ]]
     do
-        [[ -f ../patches/$line ]] && echo Applying patch $line ... && patch -p1 -i ../patches/$line
+        if [[ -f ../patches/$line ]]
+        then
+            echo Applying patch $line ... 
+            git apply --stat --apply ../patches/$line
+            echo " -> $?"
+        fi
     done
 cd ..
