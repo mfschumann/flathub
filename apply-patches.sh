@@ -21,7 +21,6 @@ cat thunderbird-patches/$VERSION/series-M-C | while read line || [[ -n $line ]]
         then
             echo Applying patch $line ... 
             git apply --stat --apply patches/$line
-            echo " -> $?"
         fi
     done
 
@@ -35,7 +34,6 @@ cat ../thunderbird-patches/$VERSION/series | while read line || [[ -n $line ]]
         then
             echo Applying patch $line ... 
             git apply --stat --apply ../patches/$line
-            echo " -> $?"
         fi
     done
 cd ..
