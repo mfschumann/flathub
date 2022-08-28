@@ -271,6 +271,18 @@
           "dest": "thunderbird-patches"
         },
         {
+            "type": "file",
+            "path": "mozconfig-Linux",
+            "only-arches": ["x86_64"],
+            "dest-filename": "mozconfig"
+        },
+        {
+            "type": "file",
+            "path": "mozconfig-Linux-aarch64",
+            "only-arches": ["aarch64"],
+            "dest-filename": "mozconfig"
+        },
+        {
           "type": "file",
           "path": "apply-patches.sh"
         }
