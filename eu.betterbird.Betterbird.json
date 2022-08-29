@@ -229,7 +229,9 @@
         "chmod u+x apply-patches.sh",
         "./apply-patches.sh 102",
         "export MOZ_BUILD_DATE=$(head -1 ./sourcestamp.txt); ./mach create-mach-environment; ./mach configure; ./mach build -v -j ${FLATPAK_BUILDER_N_JOBS}; ./mach install",
-        "rm -f /app/bin/betterbird",
+        "rm -rf /app/lib/thunderbird/chrome",
+        "mkdir -p /app/lib/betterbird",
+        "mv /app/lib/thunderbird/* /app/lib/betterbird/",
         "install -Dm755 betterbird-wrapper /app/bin/betterbird",
         "install -Dm644 policies.json /app/lib/betterbird/distribution/policies.json",
         "install -Dm644 distribution.ini /app/lib/betterbird/distribution/distribution.ini",
@@ -260,7 +262,7 @@
           "dest-filename": "betterbird-wrapper",
           "commands": [
             "export TMPDIR=\"$XDG_RUNTIME_DIR/app/$FLATPAK_ID\"",
-            "exec /app/lib/thunderbird/betterbird \"$@\""
+            "exec /app/lib/betterbird/betterbird \"$@\""
           ]
         },
         {
